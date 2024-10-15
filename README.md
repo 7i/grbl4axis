@@ -1,3 +1,21 @@
+This is a fork of grbl that applies some patches from https://github.com/gcobos/grbl4axis. 
+
+To get the original grbl firmware, go to: https://github.com/gnea/grbl
+
+The gcobos/grbl4axis patches allow a fourth axis to be used.
+
+It works by disabling VARIABLE SPINDLE feature and adding a fourth axis "E" on the digital pins 12 and 13
+
+ #define E_STEP_BIT      12    // Uno Digital Pin 12 in PORTB (SPINDLE ENABLE)
+ 
+ #define E_DIRECTION_BIT   13  // Uno Digital Pin 13 in PORTB (SPINDLE DIRECTION)
+
+I have only tested very few gcode commands with this code so no guarantees that the firmware works as well as any of the two original repos.
+
+I noticed that the Arduino Uno with the cnc shiled clone works well will quarter stepping (middle jumper) when using A4988 stepper drivers.
+
+***
+
 ![GitHub Logo](https://github.com/gnea/gnea-Media/blob/master/Grbl%20Logo/Grbl%20Logo%20250px.png?raw=true)
 
 ***
